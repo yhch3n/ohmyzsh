@@ -15,7 +15,7 @@
 
 CRUNCH_BRACKET_COLOR="%{$fg[white]%}"
 CRUNCH_TIME_COLOR="%{$fg[yellow]%}"
-CRUNCH_RVM_COLOR="%{$fg[magenta]%}"
+# CRUNCH_RVM_COLOR="%{$fg[magenta]%}"
 CRUNCH_DIR_COLOR="%{$fg[cyan]%}"
 CRUNCH_GIT_BRANCH_COLOR="%{$fg[green]%}"
 CRUNCH_GIT_CLEAN_COLOR="%{$fg[green]%}"
@@ -28,12 +28,16 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" $CRUNCH_GIT_CLEAN_COLOR✓"
 ZSH_THEME_GIT_PROMPT_DIRTY=" $CRUNCH_GIT_DIRTY_COLOR✗"
 
 # Our elements:
-CRUNCH_TIME_="$CRUNCH_BRACKET_COLOR{$CRUNCH_TIME_COLOR%T$CRUNCH_BRACKET_COLOR}%{$reset_color%}"
+# CRUNCH_TIME_="$CRUNCH_BRACKET_COLOR{$CRUNCH_TIME_COLOR%T$CRUNCH_BRACKET_COLOR}%{$reset_color%}"
+# Change time to yy-mm-dd %H:%M:%S
+CRUNCH_TIME_="%{$fg[white]%}{%{$fg[yellow]%}%D %*%{$fg[white]%}}%{$reset_color%}"
 ZSH_THEME_RUBY_PROMPT_PREFIX="$CRUNCH_BRACKET_COLOR"["$CRUNCH_RVM_COLOR"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="$CRUNCH_BRACKET_COLOR"]"%{$reset_color%}"
-CRUNCH_RVM_='$(ruby_prompt_info)'
+# CRUNCH_RVM_='$(ruby_prompt_info)'
 CRUNCH_DIR_="$CRUNCH_DIR_COLOR%~\$(git_prompt_info) "
 CRUNCH_PROMPT="$CRUNCH_BRACKET_COLOR➭ "
 
 # Put it all together!
-PROMPT="$CRUNCH_TIME_$CRUNCH_RVM_$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
+# PROMPT="$CRUNCH_TIME_$CRUNCH_RVM_$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
+PROMPT="$CRUNCH_TIME_$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
+
